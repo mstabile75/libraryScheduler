@@ -1,0 +1,8 @@
+.leftNavMenuToggle {
+	float: left;
+	margin-left:12px;
+	padding: 2px;
+}
+.leftNavMenuToggle img {
+	height: 30;
+}
