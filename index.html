@@ -4,8 +4,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="./css/nav.css">
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body ng-app="NavMenuApp">
@@ -68,12 +68,9 @@
 				    </div><!-- /.navbar-collapse -->
 				  </div><!-- /.container-fluid -->
 				</nav>
-				<div class="collapse col-sm-3 col-md-2 sidebar" id="librarySidebar">
+				<div class="collapse col-sm-3 col-md-2 sidebar" id="librarySidebar" >
           <ul class="nav nav-sidebar">
-            <li><h3>BIBCAT MENU</h3></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+            <li ng-repeat="item in navItems.baseNav"><a href="#" data-toggle="tooltip"  title="{{ item.alt }}">{{ item.label }}</a></li>
           </ul>
         </div>
 			</div>
@@ -89,6 +86,11 @@
 
     <!-- Controllers -->
     <script src="js/controllers/NavController.js"></script>
-
+		
+		<script>
+			$(function () {
+ 				 $('[data-toggle="tooltip"]').tooltip()
+			})
+		</script>
   </body>
 </html>
